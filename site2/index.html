@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cricket Legends & World Records</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    color:white;
+    overflow-x:hidden;
+    background:linear-gradient(-45deg,#000428,#004e92,#0f9b0f,#1e3c72);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating Cricket Balls */
+.ball{
+    position:fixed;
+    font-size:40px;
+    opacity:0.15;
+    z-index:-1;
+    animation:float 15s linear infinite;
+}
+
+.ball:nth-child(1){left:10%;animation-duration:12s;}
+.ball:nth-child(2){left:40%;animation-duration:18s;}
+.ball:nth-child(3){left:75%;animation-duration:14s;}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    font-size:5rem;
+    color:gold;
+    text-shadow:0 0 25px gold;
+}
+
+header p{
+    font-size:1.5rem;
+    margin-top:15px;
+}
+
+.hero-btn{
+    margin-top:30px;
+    padding:15px 35px;
+    background:gold;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:40px;
+    transition:.4s;
+}
+
+.hero-btn:hover{
+    transform:scale(1.1);
+}
+
+nav{
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:999;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+section{
+    margin:40px 0;
+    padding:35px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
+}
+
+h2{
+    color:gold;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+/* Stats */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,.1);
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    transition:.4s;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+}
+
+.stat-box h1{
+    color:gold;
+    font-size:3rem;
+}
+
+/* Players */
+.players{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.1);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    color:gold;
+    margin-bottom:10px;
+}
+
+/* Timeline */
+.timeline{
+    border-left:4px solid gold;
+    padding-left:25px;
+}
+
+.timeline div{
+    margin:20px 0;
+}
+
+/* Table */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:gold;
+    color:black;
+}
+
+th,td{
+    padding:15px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+tr:hover{
+    background:rgba(255,255,255,.1);
+}
+
+/* Trophy */
+.trophies{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.trophy{
+    text-align:center;
+    background:rgba(255,255,255,.1);
+    padding:25px;
+    border-radius:15px;
+}
+
+.trophy h1{
+    font-size:4rem;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(0,0,0,.7);
+    margin-top:40px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="ball">🏏</div>
+<div class="ball">🏏</div>
+<div class="ball">🏏</div>
+
+<header>
+    <h1>🏏 Cricket Legends</h1>
+    <p>World Records • Hall of Fame • Cricket History</p>
+    <a href="#about" class="hero-btn">Explore Now</a>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#stats">Stats</a>
+    <a href="#players">Players</a>
+    <a href="#records">Records</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#trophies">Trophies</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+    <h2>About Cricket</h2>
+    <p>
+        Cricket is one of the most popular sports in the world, played by millions
+        across continents. From Test cricket to ODI and T20 formats, the game
+        combines strategy, skill, teamwork, and sportsmanship.
+    </p>
+</section>
+
+<section id="stats">
+    <h2>Cricket Statistics Dashboard</h2>
+
+    <div class="stats">
+        <div class="stat-box">
+            <h1>100</h1>
+            <p>International Centuries</p>
+        </div>
+
+        <div class="stat-box">
+            <h1>34,357</h1>
+            <p>Most International Runs</p>
+        </div>
+
+        <div class="stat-box">
+            <h1>1,347</h1>
+            <p>Most International Wickets</p>
+        </div>
+
+        <div class="stat-box">
+            <h1>264</h1>
+            <p>Highest ODI Score</p>
+        </div>
+    </div>
+</section>
+
+<section id="players">
+    <h2>Cricket Legends</h2>
+
+    <div class="players">
+
+        <div class="card">
+            <img src="images/sachin.jpg" alt="Sachin">
+            <div class="card-content">
+                <h3>Sachin Tendulkar</h3>
+                <p>Age: 53</p>
+                <p>Country: India</p>
+                <p>100 International Centuries</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/virat.jpg" alt="Virat">
+            <div class="card-content">
+                <h3>Virat Kohli</h3>
+                <p>Age: 37</p>
+                <p>Country: India</p>
+                <p>Modern-Day Batting Icon</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/dhoni.jpg" alt="Dhoni">
+            <div class="card-content">
+                <h3>MS Dhoni</h3>
+                <p>Age: 44</p>
+                <p>Country: India</p>
+                <p>Won All Major ICC Trophies</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/rohit.jpg" alt="Rohit">
+            <div class="card-content">
+                <h3>Rohit Sharma</h3>
+                <p>Age: 39</p>
+                <p>Highest ODI Score: 264</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/bradman.jpg" alt="Bradman">
+            <div class="card-content">
+                <h3>Don Bradman</h3>
+                <p>Country: Australia</p>
+                <p>Test Average: 99.94</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/murali.jpg" alt="Murali">
+            <div class="card-content">
+                <h3>Muttiah Muralitharan</h3>
+                <p>Country: Sri Lanka</p>
+                <p>1,347 International Wickets</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="records">
+    <h2>World Records</h2>
+
+    <table>
+        <tr>
+            <th>Record</th>
+            <th>Player</th>
+            <th>Achievement</th>
+        </tr>
+
+        <tr>
+            <td>Most Runs</td>
+            <td>Sachin Tendulkar</td>
+            <td>34,357</td>
+        </tr>
+
+        <tr>
+            <td>Most Centuries</td>
+            <td>Sachin Tendulkar</td>
+            <td>100</td>
+        </tr>
+
+        <tr>
+            <td>Highest ODI Score</td>
+            <td>Rohit Sharma</td>
+            <td>264</td>
+        </tr>
+
+        <tr>
+            <td>Most Wickets</td>
+            <td>Muralitharan</td>
+            <td>1,347</td>
+        </tr>
+    </table>
+</section>
+
+<section id="timeline">
+    <h2>Cricket Timeline</h2>
+
+    <div class="timeline">
+        <div><b>1877</b> - First Official Test Match</div>
+        <div><b>1975</b> - First Cricket World Cup</div>
+        <div><b>1983</b> - India Wins World Cup</div>
+        <div><b>2007</b> - First T20 World Cup</div>
+        <div><b>2011</b> - India Wins World Cup</div>
+        <div><b>2025+</b> - Modern Cricket Era</div>
+    </div>
+</section>
+
+<section id="trophies">
+    <h2>Major Cricket Trophies</h2>
+
+    <div class="trophies">
+
+        <div class="trophy">
+            <h1>🏆</h1>
+            <h3>ICC World Cup</h3>
+        </div>
+
+        <div class="trophy">
+            <h1>🥇</h1>
+            <h3>Champions Trophy</h3>
+        </div>
+
+        <div class="trophy">
+            <h1>🌎</h1>
+            <h3>T20 World Cup</h3>
+        </div>
+
+        <div class="trophy">
+            <h1>⭐</h1>
+            <h3>World Test Championship</h3>
+        </div>
+
+    </div>
+</section>
+
+</div>
+
+<footer>
+    <h3>🏏 Cricket Legends & World Records</h3>
+    <p>Advanced Sports Website Project</p>
+</footer>
+
+</body>
+</html>
