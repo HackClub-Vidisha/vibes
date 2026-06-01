@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suhani's Dream Cars</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(to bottom,#e0f7ff,#ffffff);
+    color:#003049;
+    overflow-x:hidden;
+}
+
+/* Header */
+header{
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(135deg,#87cefa,#ffffff);
+}
+
+header h1{
+    font-size:3rem;
+    color:#0077b6;
+}
+
+header p{
+    font-size:1.2rem;
+    margin-top:10px;
+}
+
+/* Animated Road */
+.road{
+    width:100%;
+    height:140px;
+    background:#d6f0ff;
+    border-top:5px solid #0077b6;
+    border-bottom:5px solid #0077b6;
+    position:relative;
+    overflow:hidden;
+}
+
+.moving-car{
+    position:absolute;
+    bottom:10px;
+    width:180px;
+    animation:race 12s linear infinite;
+}
+
+@keyframes race{
+    from{
+        left:-250px;
+    }
+    to{
+        left:110%;
+    }
+}
+
+/* About */
+.about{
+    text-align:center;
+    padding:50px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.about h2{
+    color:#0077b6;
+    margin-bottom:15px;
+}
+
+/* Cars Section */
+.cars{
+    padding:50px 20px;
+}
+
+.cars h2{
+    text-align:center;
+    color:#0077b6;
+    margin-bottom:30px;
+}
+
+.car-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:#0077b6;
+    margin-bottom:10px;
+}
+
+/* Dream Garage */
+.garage{
+    text-align:center;
+    padding:60px 20px;
+    background:#dff5ff;
+}
+
+.garage h2{
+    color:#0077b6;
+    margin-bottom:20px;
+}
+
+/* Floating Racing Cars */
+.floating{
+    position:fixed;
+    font-size:50px;
+    opacity:0.15;
+    z-index:-1;
+}
+
+.car1{
+    top:20%;
+    animation:float1 20s linear infinite;
+}
+
+.car2{
+    top:70%;
+    animation:float2 15s linear infinite;
+}
+
+@keyframes float1{
+    from{left:-100px;}
+    to{left:110%;}
+}
+
+@keyframes float2{
+    from{left:110%;}
+    to{left:-100px;}
+}
+
+/* Footer */
+footer{
+    background:#0077b6;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating car1">🏎️</div>
+<div class="floating car2">🚗</div>
+
+<header>
+    <h1>🚗 Suhani's Dream Cars</h1>
+    <p>Created by Suhani Baghel | 15-Year-Old Car Enthusiast</p>
+</header>
+
+<div class="road">
+    <img class="moving-car"
+    src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif"
+    alt="Racing Car">
+</div>
+
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        Hi! I'm <b>Suhani Baghel</b>, a 15-year-old student who absolutely loves cars.
+        From hypercars and supercars to luxury SUVs and sports cars,
+        I enjoy learning about speed, design, engines, and automotive technology.
+    </p>
+</section>
+
+<section class="cars">
+    <h2>My Favorite Cars</h2>
+
+    <div class="car-grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200"
+                 alt="LaFerrari">
+            <div class="card-content">
+                <h3>Ferrari LaFerrari</h3>
+                <p>
+                    One of the most legendary hypercars ever built.
+                    It combines a V12 engine with hybrid technology for incredible performance.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1200"
+                 alt="Lamborghini Sian">
+            <div class="card-content">
+                <h3>Lamborghini Sián</h3>
+                <p>
+                    A futuristic Lamborghini with breathtaking design,
+                    advanced hybrid technology, and extreme performance.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200"
+                 alt="BMW M4">
+            <div class="card-content">
+                <h3>BMW M4</h3>
+                <p>
+                    A perfect combination of luxury and performance.
+                    The M4 is one of the most exciting sports coupes on the road.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200"
+                 alt="Mercedes G63">
+            <div class="card-content">
+                <h3>Mercedes G63 AMG</h3>
+                <p>
+                    A luxury SUV with a powerful AMG engine,
+                    iconic styling, and impressive off-road capability.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=1200"
+                 alt="Porsche 911">
+            <div class="card-content">
+                <h3>Porsche 911</h3>
+                <p>
+                    Timeless, fast, and beautifully engineered.
+                    The Porsche 911 is one of the world's greatest sports cars.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif"
+                 alt="Supercar GIF">
+            <div class="card-content">
+                <h3>More Amazing Cars</h3>
+                <p>
+                    I also love Bugatti, McLaren, Koenigsegg,
+                    Aston Martin, and many other incredible performance cars.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="garage">
+    <h2>🌟 My Dream Garage 🌟</h2>
+    <p style="font-size:1.2rem;">
+        🏎️ Ferrari LaFerrari • Lamborghini Sián • BMW M4 • Mercedes G63 AMG • Porsche 911
+    </p>
+
+    <br>
+
+    <img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif"
+         width="320"
+         alt="Racing Car GIF">
+</section>
+
+<footer>
+    <p>© 2026 Suhani Baghel | Dream Cars Website</p>
+</footer>
+
+</body>
+</html>
